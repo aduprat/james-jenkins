@@ -1,4 +1,4 @@
-def GITHUB_BASE_URL= 'https://github.com/linagora/'
+def GITHUB_BASE_URL= 'https://github.com/aduprat/'
 def REPOSITORIES = ['james-project'] 
 
 REPOSITORIES.each {
