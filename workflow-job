@@ -225,16 +225,13 @@ class Command {
     private final String command;
 
     Command(String command) {
-        println("in command")
         this.command = command;
     }
 
     def execute = { node ->
         try {
-            node.echo "in execute"
             node.sh "${command}"
         } catch (Exception e) {
-            node.echo "Error executing ${command} : ${e.getMessage()}"
             e.printStackTrace();
         }
     }
@@ -464,7 +461,6 @@ flows["${sha1}"] = {
 
                 deployGuiceJPASample()
 
-                echo "publishToDocker"
                 if (publishToDocker()) {
                     publish()
                 }
