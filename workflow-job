@@ -642,10 +642,11 @@ def testGuiceJPA() {
     testingGuiceJPA.success();
 }
 
+jamesCliWithOptionsSpring = ""
 def deploySpringJPA() {
     sh "cd dockerfiles/run/spring; docker cp ${containers.keystore}:${keystorePath} destination/conf"
     def zipPath = "/spring/destination/james-server-app-${jamesVersion}-app.zip"
-    def jamesCliWithOptionsSpring = "/root/james-server-app-${jamesVersion}/bin/james-cli.sh -h 127.0.0.1 -p 9999"
+    jamesCliWithOptionsSpring = "/root/james-server-app-${jamesVersion}/bin/james-cli.sh -h 127.0.0.1 -p 9999"
 
     sh "cd dockerfiles/run/spring; docker cp ${containers.jamesTest}:${zipPath} destination"
 
