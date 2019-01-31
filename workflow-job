@@ -448,11 +448,11 @@ flows["${sha1}"] = {
 
                 compile()
 
-//                deployGuiceCassandra()
-//                testGuiceCassandra()
+                deployGuiceCassandra()
+                testGuiceCassandra()
 
-//                deployGuiceJPA()
-//                testGuiceJPA()
+                deployGuiceJPA()
+                testGuiceJPA()
 
                 deploySpringJPA()
                 testSpringJPA()
