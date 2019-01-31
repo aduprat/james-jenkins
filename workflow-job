@@ -482,11 +482,12 @@ flows["${sha1}"] = {
 
 parallel flows
 
+jamesVersion = ""
 def merge() {
     git url: authorParentURL, branch: branch
     sh "git fetch origin"
     sh "git checkout ${branch}"
-    def jamesVersion = version()
+    jamesVersion = version()
     sh "docker build --tag ${images.gitPublish} -f dockerfiles/merge/Dockerfile ."
     sh "docker run ${verbose} -t --name ${containers.gitPublish} -v /origin ${images.gitPublish} ${sha1ToBuild} ${mergeBranch} ${originalBranch}"
     merging.success();
